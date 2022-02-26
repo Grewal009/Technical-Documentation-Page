@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <!-- Stylesheet file -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Hello, world!</title>
+    </head>
+    <body>
+        <nav>
+            <header id="main-heading">CSS Documentation</header>
+            <ul>
+                <li><a href="#css">What is CSS?</a></li>
+                <li><a href="#getting-started">Getting started with CSS</a></li>
+                <li><a href="#css-structured">How CSS is structured</a></li>
+                <li><a href="#css-works">How CSS works</a></li>
+                <li><a href="#knowledge">Using your new knowledge</a></li>
+
+
+
+            </ul>
+        </nav>
+
+
+
+        <main id="main-doc">
+            <section class="main-section">
+                <header class="heading" id="css">What is CSS?</header>
+                <p>CSS (Cascading Style Sheets) allows you to create great-looking web pages, but how does it work under the hood? This article explains what CSS is, with a simple syntax example, and also covers some key terms about the language.</p>
+                <p>A document is usually a text file structured using a markup language — HTML is the most common markup language, but you may also come across other markup languages such as SVG or XML.</p>
+
+                   <p> Presenting a document to a user means converting it into a form usable by your audience. Browsers, like Firefox, Chrome, or Edge , are designed to present documents visually, for example, on a computer screen, projector or printer.</p>
+                   <p>CSS is a rule-based language — you define rules specifying groups of styles that should be applied to particular elements or groups of elements on your web page. For example "I want the main heading on my page to be shown as large red text."</p>
+
+                    <p>The following code shows a very simple CSS rule that would achieve the styling described above:</p>
+                    <pre><code>
+                        h1 {
+                            color: red;
+                            font-size: 5em;
+                        }
+                    </code></pre>
+                   
+                    <p>A CSS stylesheet will contain many such rules, written one after the other.</p>
+                    <pre><code>
+                        h1 {
+                            color: red;
+                            font-size: 5em;
+                        }
+                        
+                        p {
+                            color: black;
+                        }
+                    </code></pre>
+            </section>
+            <section class="main-section">
+                <header class="heading" id="getting-started">Getting started with CSS</header>
+                <p>The very first thing we need to do is to tell the HTML document that we have some CSS rules we want it to use. There are three different ways to apply CSS to an HTML document that you'll commonly come across, however, for now, we will look at the most usual and useful way of doing so — linking CSS from the head of your document.</p>
+                <p>Create a file in the same folder as your HTML document and save it as styles.css. The .css extension shows that this is a CSS file.</p>
+                <p>To link styles.css to index.html add the following line somewhere inside the <head> of the HTML document:</p>
+                <pre><code>
+                    <span>&lt;link rel="stylesheet" href="styles.css"&gt;</span>
+                </code></pre>
+                <p>Save your HTML and CSS files and reload the page in a web browser. The level one heading at the top of the document should now be red. If that happens, congratulations — you have successfully applied some CSS to an HTML document. If that doesn't happen, carefully check that you've typed everything correctly.</p>
+
+                    <p>You can continue to work in styles.css locally, or you can use our interactive editor below to continue with this tutorial. The interactive editor acts as if the CSS in the first panel is linked to the HTML document, just as we have with our document above.</p>
+            </section>
+            <section class="main-section">
+                <header class="heading" id="css-structured">How CSS is structured</header>
+                <p>An external stylesheet contains CSS in a separate file with a .css extension. This is the most common and useful method of bringing CSS to a document. You can link a single CSS file to multiple web pages, styling all of them with the same CSS stylesheet. In the Getting started with CSS, we linked an external stylesheet to our web page.</p>
+
+                   <p>You reference an external CSS stylesheet from an HTML <link> element:</p>
+                   <pre><code>
+                     &lt;!DOCTYPE html&gt; &lt;&gt;
+                     &lt;html&gt;
+                     &lt;head&gt;
+                     &lt;meta charset="utf-8"&gt;
+                     &lt;title&gt;My CSS experiment&lt;/title&gt;
+                     &lt;link rel="stylesheet" href="styles.css"&gt;
+                     &lt;/head&gt;
+                      &lt;body&gt;
+                        &lt;h1&gt;Hello World!&lt;/h1&gt;
+                        &lt;p&gt;This is my first CSS example&lt;/p&gt;
+                      &lt;/body&gt;
+                    &lt;/html&gt;
+                   </code></pre>
+            </section>
+            <section class="main-section">
+                <header class="heading" id="css-works">How CSS works</header>
+                <p>When a browser displays a document, it must combine the document's content with its style information. It processes the document in a number of stages, which we've listed below. Bear in mind that this is a very simplified version of what happens when a browser loads a webpage, and that different browsers will handle the process in different ways. But this is roughly what happens.</p>
+
+                    <p>The browser loads the HTML (e.g. receives it from the network).</p>
+                    <ol><li>converts the HTML into a DOM (Document Object Model).</li>
+                        <li>The DOM represents the document in the computer's memory. The DOM is explained in a bit more detail in the next section.</li> 
+                    <li>The browser then fetches most of the resources that are linked to by the HTML document, such as embedded images and videos ... and linked CSS! JavaScript is handled a bit later on in the process, and we won't talk about it here to keep things simpler.</li>
+                    <li>The browser parses the fetched CSS, and sorts the different rules by their selector types into different "buckets", e.g. element, class, ID, and so on. Based on the selectors it finds, it works out which rules should be applied to which nodes in the DOM, and attaches style to them as required (this intermediate step is called a render tree).</li>
+                    <li>The render tree is laid out in the structure it should appear in after the rules have been applied to it.</li>
+                    <li>The visual display of the page is shown on the screen (this stage is called painting).</li>
+                </ol></p>
+            </section>
+            <section>
+                <header class="heading" id="knowledge">Using your new knowledge</header>
+                <p>With the things you have learned in the last few lessons you should find that you can format simple text documents using CSS to add your own style to them.</p>
+            </section>
+
+        </main>
+        
+        
+         
+
+
+
+  
+
+    
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>
